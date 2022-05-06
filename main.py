@@ -87,7 +87,8 @@ class Score_Builder(IBuilder):
         try:
             for i in self.sorted_data[0:score]:
                     print(f'--- The students top {score} students are {i[0]}.')
-                    print('------------------------------------------------------')
+                   
+            return ""
         except:
             print("Error") 
        
@@ -160,11 +161,12 @@ class Accuracy_Builder(IBuilder):
             for i in self.sorted_data:
                 if i[1] >= score:
                     print(f'--- The students with {score} or more score are {i[0]}. ')
-                    print('------------------------------------------------------')
+                   
+            return ""
         except:
             print("Error") 
 
-class Director(list):
+class Director():
     
     @classmethod
     def construct(cls):
@@ -173,3 +175,8 @@ class Director(list):
     @classmethod
     def constructAccuracy(cls):
         return Accuracy_Builder().parse().sum_().sort(True).show_winners(100)
+
+a = Director.construct()
+b = Director.constructAccuracy()
+print(a)
+print(b)
