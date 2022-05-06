@@ -86,7 +86,7 @@ class Score_Builder(IBuilder):
           
         try:
             for i in self.sorted_data[0:score]:
-                    print(f'--- The students top {score} students are {i[0]}.')
+                    print(f'--- The top {score} students are {i[0]}.')
                    
             return ""
         except:
