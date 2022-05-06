@@ -101,14 +101,12 @@ class Accuracy_Builder(IBuilder):
     # sorted_data represent the students sorted by their score in ascending order.
     # number_of_files represent the files in the csv files dir, if we keep adding more files the 
     #   :function to get the Accuracy would keep working the way that it is intended.
-    # sorted_data_accuracy is the users sorted by their accuracy.
     
     
     merged_files = {}
     sorted_data = []
     raw_merged_files = []
     number_of_files = []
-    sorted_data_accuracy = []
     
     
     def parse(self):
@@ -165,10 +163,6 @@ class Accuracy_Builder(IBuilder):
                     print('------------------------------------------------------')
         except:
             print("Error") 
-        # for student in self.sorted_data:
-        #     if self.sorted_data[student[0]] = 70:
-        #         self.sorted_data_accuracy[0] = student
-        # return self.sorted_data_accuracy
 
 class Director(list):
     
@@ -179,8 +173,3 @@ class Director(list):
     @classmethod
     def constructAccuracy(cls):
         return Accuracy_Builder().parse().sum_().sort(True).show_winners(100)
-            
-object = Director.construct()
-object2 = Director.constructAccuracy()
-print(object)
-print(object2)
